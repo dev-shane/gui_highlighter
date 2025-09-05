@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, UnidentifiedImageError
 import os
 
-def draw_leaf_bounds(input_image_path: str, bounds_list: list[list[int]], output_path: str = None, color=(255, 0, 255), line_width=1):
+def draw_leaf_bounds(input_image_path: str, bounds_list: list[list[int]], output_path: str = None, color=(255, 255, 0), line_width=1):
     """
     Draw rectangles on an image representing leaf bounds.
 

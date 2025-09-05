@@ -34,7 +34,7 @@ most likely scenarios and edge cases relevant for the program.
 
 INPUT_PATH = os.path.join("tests", "test_inputs")
 OUTPUT_PATH = os.path.join("tests", "test_outputs")
-YELLOW = (255, 0, 255)
+YELLOW = (255, 255, 0)
 
 os.makedirs(INPUT_PATH, exist_ok=True)
 os.makedirs(OUTPUT_PATH, exist_ok=True)
