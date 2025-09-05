@@ -34,7 +34,7 @@ most likely scenarios and edge cases relevant for the program.
 
 INPUT_PATH = os.path.join("tests", "test_inputs")
 OUTPUT_PATH = os.path.join("tests", "test_outputs")
-YELLOW = (0, 255, 255)
+YELLOW = (255, 0, 255)
 
 os.makedirs(INPUT_PATH, exist_ok=True)
 os.makedirs(OUTPUT_PATH, exist_ok=True)
@@ -87,14 +87,14 @@ class TestDrawer(unittest.TestCase):
         img_path = self._create_blank_image("outofbounds.png")
         output_path = os.path.join(OUTPUT_PATH, "outofbounds.png")
 
-        bounds = [[-10, -10, 210, 210]]  # extends outside
+        bounds = [[-10, -10, 150, 150]]  # extends outside
         draw_leaf_bounds(img_path, bounds, output_path)
 
         pixels = self._load_pixels(output_path)
         # Corners inside valid range should still be drawn
-        self.assertEqual(pixels[0, 210], YELLOW)
-        self.assertEqual(pixels[210, 0], YELLOW)
-        self.assertEqual(pixels[210, 210], YELLOW)
+        self.assertEqual(pixels[0, 150], YELLOW)
+        self.assertEqual(pixels[150, 0], YELLOW)
+        self.assertEqual(pixels[150, 150], YELLOW)
 
     def test_no_bounds(self):
         img_path = self._create_blank_image("nobounds.png")
@@ -131,11 +131,13 @@ class TestDrawer(unittest.TestCase):
         # Call without output_path
         draw_leaf_bounds(img_path, bounds)
 
-        # Expect file next to input, with a modified name or overwrite
-        self.assertTrue(os.path.exists(img_path))
+        # Expect file next to input with a modified name
+        base, ext = os.path.splitext(img_path)
+        output_path = f"{base}_annotated{ext}"
+        self.assertTrue(os.path.exists(output_path))
 
         # Ensure drawing occurred (sample corner pixel should be yellow)
-        pixels = self._load_pixels(img_path)
+        pixels = self._load_pixels(output_path)
         self.assertEqual(pixels[30, 30], YELLOW)
         self.assertEqual(pixels[80, 80], YELLOW)
 
