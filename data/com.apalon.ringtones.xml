@@ -16,6 +16,7 @@
 														<node bounds="[0,0][1440,984]" checkable="false" checked="false" class="android.widget.ImageView" clickable="false" content-desc="" enabled="true" focusable="false" focused="false" index="0" long-clickable="false" package="com.apalon.ringtones" password="false" resource-id="com.apalon.ringtones:id/cover_view" scrollable="false" selected="false" text=""/>
 														<node bounds="[0,96][1440,320]" checkable="false" checked="false" class="android.view.ViewGroup" clickable="false" content-desc="" enabled="true" focusable="false" focused="false" index="1" long-clickable="false" package="com.apalon.ringtones" password="false" resource-id="com.apalon.ringtones:id/toolbar" scrollable="false" selected="false" text="">
 															<node bounds="[0,96][224,320]" checkable="false" checked="false" class="android.widget.ImageButton" clickable="true" content-desc="Navigate up" enabled="true" focusable="true" focused="false" index="0" long-clickable="false" package="com.apalon.ringtones" password="false" resource-id="" scrollable="false" selected="false" text=""/>
+														</node>
 													</node>
 												</node>
 												<node bounds="[0,984][1440,2368]" checkable="false" checked="false" class="android.widget.FrameLayout" clickable="false" content-desc="" enabled="true" focusable="false" focused="false" index="1" long-clickable="false" package="com.apalon.ringtones" password="false" resource-id="" scrollable="false" selected="false" text="">
